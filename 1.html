@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<title></title>
+<style>
+*{margin:0;padding:0;}
+html,body{width:100%;height:100%;}
+body {
+	font-family: 'Hiragino Sans GB','Microsoft YaHei','黑体',Helvetica,Arial,Tahoma,sans-serif;
+	color: #666;
+	background: #b2fefe;
+	font-size: 12px
+}
+ul li{list-style:none;}
+section{width:100%;height:100%;background-size:auto 100%;}
+section:nth-of-type(1){background:url(images/1.jpeg) no-repeat center center;z-index:60;}
+section:nth-of-type(2){background:url(images/2.jpg) no-repeat center center;z-index:50;}
+section:nth-of-type(3){background:url(images/3.jpg) no-repeat center center;z-index:40;}
+section:nth-of-type(4){background:url(images/4.jpg) no-repeat center center;z-index:30;}
+section:nth-of-type(5){background:url(images/5.jpg) no-repeat center center;z-index:20;}
+section:nth-of-type(6){background:url(images/6.jpg) no-repeat center center;z-index:10;}
+.page{position: absolute;left: 0;top: 0;-webkit-user-select: none;user-select: none;
+    height: 100%;width: 100%;background: #b2fefe no-repeat center center;background-size: 100% auto; 
+}
+@media only screen and (max-aspect-ratio: 2/3){
+	section.page {
+		background-size: auto 100%;
+	}
+}
+.animated {
+	-webkit-animation-duration: 1s;animation-duration: 1s;
+	-webkit-animation-fill-mode: both;animation-fill-mode: both; 
+}
+
+<!-- page的动画-->
+@-webkit-keyframes fadeOutUp {
+	0% {opacity: 1}
+	100% {opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);transform: translate3d(0, -100%, 0)}
+}
+
+@keyframes fadeOutUp {
+	0% {opacity: 1}
+	100% {
+		opacity: 0;-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0)
+	}
+}
+.fadeOutUp {
+	-webkit-animation-name: fadeOutUp;
+	animation-name: fadeOutUp
+}
+
+@-webkit-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0)
+	}
+	100% {
+		opacity: 1;-webkit-transform: none;transform: none
+	}
+}
+
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown
+}
+
+
+section:nth-of-type(2) .pop{background:url(images/2-598-698.png);width: 299px;
+    height: 349px;
+    background-size: 100% auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    bottom: 126px;}
+section:nth-of-type(2) .pop .title{width: 116px;
+    margin-left: 41px;
+    margin-top: 55px;}
+section:nth-of-type(2) .pop .title img{max-width:100%;}
+section:nth-of-type(2) .pop .content{width: 177px;margin:0 auto;padding-left:18px;}
+section:nth-of-type(2) .pop .content .tit{margin-top: -6px;
+    margin-bottom: 8px;
+    color: #ffeb38;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: normal;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;}
+section:nth-of-type(2) .pop .content .con{ 
+    margin: 0 auto;
+    color: #fff;}
+section:nth-of-type(2) .person{width: 290px;
+    position: absolute;left: 50%;bottom:0; margin-left: -145px;}
+@-webkit-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp
+}
+
+.fn-animation {
+	opacity: 0;
+	transition: opacity .4s linear
+}
+
+
+section:nth-of-type(3) .p3{background:url(images/3-617-745.png);
+    width: 308px;
+    height: 373px;
+    background-size: 100% auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -154px;
+    bottom: 126px;}
+section:nth-of-type(3) .p3c{position:relative;width:250px;height:200px;margin:12px auto 0;
+   background:url(images/3-512-429.png);background-size: 100% auto;padding:10px;}
+section:nth-of-type(3) .p3c img{width:100%;}
+section:nth-of-type(3) .p3c p{position: absolute;
+    bottom: 28px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.56);
+    margin-right: 10px;
+    padding: 10px 8px;}
+
+	
+	
+section:nth-of-type(4) .con_4{width:293px;height:260px;position: absolute;
+    bottom: 234px;left: 50%;margin-left: -146px;
+    background:url(images/4-585-520.png);background-size: 100% auto;}
+section:nth-of-type(4) .con_4 .con_4_tit{width: 220px;
+    margin: 27px auto 0px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;}
+section:nth-of-type(4) .con_4 .con_4_tit img{max-width:100%;}
+section:nth-of-type(4) .con_4 ul{width: 214px;
+    margin: 10px auto;color: #fff;list-style: none;font-size: 14px;
+	}
+section:nth-of-type(4) .con_4 ul li{}
+section:nth-of-type(4) .con_4 li:before {
+    content: '·';
+    margin-right: 7px;
+}
+section:nth-of-type(4) .person_4{position: absolute;
+    bottom: 0px;}
+section:nth-of-type(4) .person_4 img{}
+
+
+section:nth-of-type(5) .con_5{
+   width:289px;height:454px;background:url(images/5-578-908.png) no-repeat center;
+   background-size:100% auto;
+   margin:0 auto;
+   margin-top:50px;
+   
+}
+section:nth-of-type(5) .con_5 .con_5_tit{ 
+     padding:30px 30px 0;
+	 width:232px;
+	 height:39px;
+}
+section:nth-of-type(5) .con_5 .con_5_tit img{max-width:100%;}
+section:nth-of-type(5) .con_5 dl{padding: 10px 10px 0 50px;}
+section:nth-of-type(5) .con_5 dl dt{color: #ffe500;position:relative;}
+section:nth-of-type(5) .con_5 dl dt:before{
+    content: attr(data-index);
+    position: absolute;
+    width: 17px;
+    height: 19px;
+    color: #ff4000;
+    background: transparent url(images/5-34-37.png) no-repeat center;
+    background-size: 100%;
+    left: -22px;
+    text-align: center;
+    z-index: 2;
+}
+
+section:nth-of-type(5) .con_5 dl dt:after{
+    content:"";
+	width:1px;
+	height:55px;
+	background-color: #f2811b;
+	position:absolute;
+	left:-14px;
+}
+
+
+section:nth-of-type(5) .con_5 dl dd{color:#fff;margin-bottom:5px;}
+section:nth-of-type(5) .con_5 h2{color: #ffe500;
+    font-size: 14px;
+    padding-left: 24px;}
+section:nth-of-type(5) .con_5 ul{padding: 6px 14px 0px 34px;
+    color: #fff;
+     }
+section:nth-of-type(5) .con_5 ul li{list-style-type: decimal;margin-bottom:6px;}
+
+
+section:nth-of-type(6) .inner{
+    position: relative;
+    margin: -120px auto 0;
+    top: 47%;
+    width: 228px;
+    text-align: center;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+<section class="page"></section>
+<section class="page">
+   <div class="pop">
+      <div class="title"><img src="images/2-233-86.png" /></div>
+	  <div class="content">
+	     <div class="tit">国际B2C-AliExpress</div>
+		 <div class="con">
+		   阿里巴巴集团面向全球市场打造的在线交易平台！每天接受来自全球200多个国家的访问和交易，在这里，你可以迎接最前沿的技术挑战，也可以帮助更多中国卖家走向全世界！欢迎你，和我们一起实现Smarter Shopping, Better Living!
+		 </div>
+	  </div>
+   </div>
+   <div class="person">
+      <img src="images/2-300-173.png" style="width:100%;" />
+   </div>
+</section>
+<section class="page">
+   <div class="p3">
+      <img src="images/3-534-112.png" style="width:250px;display:block;margin:10px auto 0;"/>
+	  <div class="p3c">
+	    <img src="images/3-164-120.png"/>
+		<p>郭东白：AliExpress技术部总监，致力于实现“全球买，全球卖”跨境电商平台,带领团队不断挑战技术新高！</p>
+	  </div>
+   </div>
+</section>
+<section class="page">
+    <div class="con_4">
+	   <div class="con_4_tit">
+	      <img src="images/4-426-143.png"/>
+	   </div>
+	   <ul>
+	      <li>免笔试</li>
+		  <li>提早拿录取意向书</li>
+		  <li>不通过，还能参加正常笔试</li>
+	   </ul>
+	</div>
+	<div class="person_4">
+	   <img src="images/4-300-236.png"/>
+	</div>
+</section>
+<section class="page">
+	<div class="con_5">
+	  <div class="con_5_tit">
+		<img src="images/5-464-77.png"/>
+	  </div>
+	  <dl>
+			<dt data-index="1">大神学长</dt>
+			<dd>找到一位在阿里工作的学长.</dd>
+			<dt data-index="2">确定职位&部门</dt>
+			<dd>学长会把你推荐到阿里巴巴简历库，HR会根据你的专业背景分配合适的部门.</dd>
+			<dt data-index="3">接收邮件&短信</dt>
+			<dd>接下来，你会收到邮件和短信.</dd>
+			<dt data-index="4">补充简历</dt>
+			<dd>只有点击邮件链接，进入校招官网，补充简历，确认内推，才算内推成功.</dd>
+			<dt data-index="5">等待评估</dt>
+			<dd>如简历评估通过，我们会邀请亲参加电话或视频面试.</dd>
+	  </dl>
+	  <h2>注意事项</h2>
+	  <ul>
+		<li>网申和内推同时开始，亲可在校招官网上看到全部职位，内推截至时间7月26日</li>
+		<li>每位同学只能被成功内推一次.如亲已网申,也可以找学长内推，当收到邮件链接时确认即可</li>
+	  </ul>
+	</div>
+</section>
+<section class="page">
+   <div class="inner">
+		<div>
+		网申时间：7月1日-8月15日<br>
+		内推时间：7月1日-7月26日
+		</div>
+	    <div class=" ">
+			<img />
+		</div>
+		<p> 国际B2C-AliExpress内部推荐</p>
+		<a><img /></a>
+		<p>知校招，就关注 @阿里巴巴集团校园招聘</p>
+	</div>
+</section>
+<script>
+var oSections=document.getElementsByTagName("section");   
+var  startY,  endY;
+var showADID = 0;
+document.addEventListener("touchstart", touchStart, false);
+document.addEventListener("touchmove", touchMove, false);
+document.addEventListener("touchend", touchEnd, false);
+function touchStart(event) {
+        var touch = event.touches[0];
+        startY = touch.pageY;    
+}
+function touchMove(event) {
+        var touch = event.touches[0];
+        endY = (startY - touch.pageY);  
+}
+function touchEnd(event) {
+        if (endY > 50) {    
+			console.log(showADID);
+			if(showADID>=5)
+			{
+			   showADID=4;
+			   return;
+			}
+            oSections[showADID++].className="page animated fadeOutUp";			
+        }
+		else if(endY < -50)
+		{ 
+			console.log(showADID);
+			if(showADID<=-1)
+			{
+			  showADID=0;
+			  return;
+			}
+		    oSections[showADID--].className="page animated fadeInDown";
+		}
+} 
+</script>
+</body>
+</html>
